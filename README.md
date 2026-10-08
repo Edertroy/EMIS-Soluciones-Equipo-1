@@ -8,7 +8,7 @@ Sistema de Gestión Comercial para EMIS Soluciones S.A.S.
 
 El proyecto consiste en desarrollar una solución web orientada a facilitar la consulta y gestión de la información comercial de EMIS Soluciones S.A.S.
 
-La aplicación permitirá organizar y consultar información relacionada con los productos ofrecidos por la empresa, facilitar la búsqueda de productos y apoyar la gestión de solicitudes de información realizadas por los clientes.
+La aplicación permite organizar y consultar información relacionada con los productos ofrecidos por la empresa, facilitar la búsqueda de productos y apoyar la gestión de solicitudes de información realizadas por los clientes.
 
 ## Problema
 
@@ -18,7 +18,7 @@ El proyecto busca desarrollar una solución que permita organizar esta informaci
 
 ## Producto
 
-El producto será una aplicación web para la gestión y consulta de información comercial de EMIS Soluciones S.A.S.
+El producto es una aplicación web para la gestión y consulta de información comercial de EMIS Soluciones S.A.S.
 
 Entre las funcionalidades planteadas se encuentran:
 
@@ -40,9 +40,7 @@ Entre las funcionalidades planteadas se encuentran:
 
 ## Tecnologías
 
-Las tecnologías serán definidas y utilizadas durante el desarrollo del proyecto.
-
-Inicialmente se contempla el uso de:
+Inicialmente se utilizan:
 
 - HTML
 - CSS
@@ -50,7 +48,7 @@ Inicialmente se contempla el uso de:
 - Git
 - GitHub
 
-Las tecnologías podrán ampliarse de acuerdo con las necesidades que se definan durante el desarrollo de los Sprints.
+Las tecnologías podrán ampliarse de acuerdo con las necesidades que se definan durante los siguientes Sprints.
 
 ## Metodología
 
@@ -76,25 +74,15 @@ EMIS-Soluciones-Equipo-1/
 │   ├── user-stories.md
 │   └── sprints/
 │       └── sprint-01/
-│           └── sprint-backlog.md
+│           ├── sprint-backlog.md
+│           └── sprint-review.md
 │
 ├── src/
+│   ├── index.html
+│   ├── css/
+│   │   └── styles.css
+│   └── js/
+│       └── app.js
 │
 ├── README.md
 └── .gitignore
-```
-
-## Estado actual
-
-Actualmente el proyecto se encuentra en la etapa inicial de planificación y documentación.
-
-Se han definido:
-
-- La visión del producto.
-- Las épicas.
-- Las features.
-- Las historias de usuario.
-- El Product Backlog.
-- El Sprint Backlog del Sprint 1.
-
-El desarrollo del código se realizará progresivamente durante los siguientes Sprints.

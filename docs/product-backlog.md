@@ -2,8 +2,10 @@
 
 ## Información del proyecto
 
-**Proyecto:** Sistema de Gestión Comercial para EMIS Soluciones S.A.S.  
-**Equipo:** Equipo 1  
+**Proyecto:** Sistema de Gestión Comercial para EMIS Soluciones S.A.S.
+
+**Equipo:** Equipo 1
+
 **Integrantes:** Eder Avendaño, Nicol Duque, Cristian Zapata
 
 ---
@@ -16,11 +18,14 @@
 
 Como administrador, quiero registrar productos con su información básica, para mantener actualizado el catálogo.
 
-**Prioridad:** Alta  
-**Estimación:** 5 puntos  
+**Prioridad:** Alta
+
+**Estimación:** 5 puntos
+
 **Estado:** Pendiente
 
 **Criterios de aceptación:**
+
 - El sistema debe permitir ingresar el nombre del producto.
 - Debe permitir seleccionar una categoría.
 - Debe permitir ingresar una descripción.
@@ -35,11 +40,14 @@ Como administrador, quiero registrar productos con su información básica, para
 
 Como administrador, quiero editar la información de un producto, para mantener sus datos actualizados.
 
-**Prioridad:** Alta  
-**Estimación:** 5 puntos  
+**Prioridad:** Alta
+
+**Estimación:** 5 puntos
+
 **Estado:** Pendiente
 
 **Criterios de aceptación:**
+
 - El administrador debe poder seleccionar un producto.
 - El sistema debe mostrar su información actual.
 - Debe permitir modificar los datos.
@@ -54,11 +62,14 @@ Como administrador, quiero editar la información de un producto, para mantener 
 
 Como administrador, quiero clasificar los productos por categorías, para facilitar su organización y consulta.
 
-**Prioridad:** Media  
-**Estimación:** 3 puntos  
+**Prioridad:** Media
+
+**Estimación:** 3 puntos
+
 **Estado:** Pendiente
 
 **Criterios de aceptación:**
+
 - El sistema debe permitir seleccionar una categoría.
 - Un producto debe pertenecer a una categoría.
 - Las categorías deben poder visualizarse.
@@ -74,11 +85,14 @@ Como administrador, quiero clasificar los productos por categorías, para facili
 
 Como cliente, quiero consultar el catálogo de productos, para conocer la oferta disponible.
 
-**Prioridad:** Alta  
-**Estimación:** 5 puntos  
-**Estado:** Pendiente
+**Prioridad:** Alta
+
+**Estimación:** 5 puntos
+
+**Estado:** Completada
 
 **Criterios de aceptación:**
+
 - El cliente debe poder visualizar los productos.
 - Cada producto debe mostrar información básica.
 - Los productos deben estar organizados.
@@ -92,11 +106,14 @@ Como cliente, quiero consultar el catálogo de productos, para conocer la oferta
 
 Como cliente, quiero buscar productos por nombre, para encontrar rápidamente el producto que necesito.
 
-**Prioridad:** Alta  
-**Estimación:** 5 puntos  
-**Estado:** Pendiente
+**Prioridad:** Alta
+
+**Estimación:** 5 puntos
+
+**Estado:** Completada
 
 **Criterios de aceptación:**
+
 - Debe existir un campo de búsqueda.
 - El cliente debe poder ingresar el nombre del producto.
 - El sistema debe mostrar los resultados relacionados.
@@ -110,11 +127,14 @@ Como cliente, quiero buscar productos por nombre, para encontrar rápidamente el
 
 Como cliente, quiero filtrar los productos por categoría, para consultar solamente los productos que me interesan.
 
-**Prioridad:** Media  
-**Estimación:** 3 puntos  
-**Estado:** Pendiente
+**Prioridad:** Media
+
+**Estimación:** 3 puntos
+
+**Estado:** Completada
 
 **Criterios de aceptación:**
+
 - El sistema debe mostrar las categorías disponibles.
 - El cliente debe poder seleccionar una categoría.
 - El sistema debe mostrar los productos correspondientes.
@@ -128,11 +148,14 @@ Como cliente, quiero filtrar los productos por categoría, para consultar solame
 
 Como cliente, quiero consultar el detalle de un producto, para conocer mejor sus características.
 
-**Prioridad:** Media  
-**Estimación:** 3 puntos  
-**Estado:** Pendiente
+**Prioridad:** Media
+
+**Estimación:** 3 puntos
+
+**Estado:** Completada
 
 **Criterios de aceptación:**
+
 - El cliente debe poder seleccionar un producto.
 - El sistema debe mostrar su nombre.
 - Debe mostrar su descripción.
@@ -149,11 +172,14 @@ Como cliente, quiero consultar el detalle de un producto, para conocer mejor sus
 
 Como cliente, quiero enviar una solicitud de información sobre un producto, para recibir atención por parte de EMIS.
 
-**Prioridad:** Alta  
-**Estimación:** 5 puntos  
+**Prioridad:** Alta
+
+**Estimación:** 5 puntos
+
 **Estado:** Pendiente
 
 **Criterios de aceptación:**
+
 - El cliente debe poder seleccionar o indicar el producto.
 - Debe poder escribir su solicitud.
 - Debe poder registrar sus datos de contacto.
@@ -167,11 +193,14 @@ Como cliente, quiero enviar una solicitud de información sobre un producto, par
 
 Como administrador, quiero consultar las solicitudes realizadas por los clientes, para realizar su seguimiento.
 
-**Prioridad:** Media  
-**Estimación:** 5 puntos  
+**Prioridad:** Media
+
+**Estimación:** 5 puntos
+
 **Estado:** Pendiente
 
 **Criterios de aceptación:**
+
 - El administrador debe poder visualizar las solicitudes.
 - Cada solicitud debe mostrar la información del cliente.
 - Debe mostrar la fecha de la solicitud.
@@ -185,11 +214,14 @@ Como administrador, quiero consultar las solicitudes realizadas por los clientes
 
 Como administrador, quiero actualizar el estado de una solicitud, para realizar un seguimiento de su atención.
 
-**Prioridad:** Media  
-**Estimación:** 3 puntos  
+**Prioridad:** Media
+
+**Estimación:** 3 puntos
+
 **Estado:** Pendiente
 
 **Criterios de aceptación:**
+
 - El administrador debe poder seleccionar una solicitud.
 - Debe poder modificar su estado.
 - El sistema debe guardar el cambio.
@@ -205,11 +237,14 @@ Como administrador, quiero actualizar el estado de una solicitud, para realizar 
 
 Como administrador, quiero actualizar la información comercial de EMIS, para mantenerla vigente.
 
-**Prioridad:** Media  
-**Estimación:** 3 puntos  
+**Prioridad:** Media
+
+**Estimación:** 3 puntos
+
 **Estado:** Pendiente
 
 **Criterios de aceptación:**
+
 - El administrador debe poder modificar la información autorizada.
 - Debe poder guardar los cambios.
 - El sistema debe confirmar la actualización.
@@ -223,11 +258,14 @@ Como administrador, quiero actualizar la información comercial de EMIS, para ma
 
 Como administrador, quiero administrar los datos de contacto de EMIS, para mantener disponibles los medios de comunicación con la empresa.
 
-**Prioridad:** Media  
-**Estimación:** 3 puntos  
+**Prioridad:** Media
+
+**Estimación:** 3 puntos
+
 **Estado:** Pendiente
 
 **Criterios de aceptación:**
+
 - Debe permitir actualizar teléfonos.
 - Debe permitir actualizar correos electrónicos.
 - Debe permitir actualizar otros datos de contacto definidos para el proyecto.
@@ -243,11 +281,14 @@ Como administrador, quiero administrar los datos de contacto de EMIS, para mante
 
 Como administrador, quiero registrar usuarios, para permitirles acceder al sistema según sus funciones.
 
-**Prioridad:** Media  
-**Estimación:** 5 puntos  
+**Prioridad:** Media
+
+**Estimación:** 5 puntos
+
 **Estado:** Pendiente
 
 **Criterios de aceptación:**
+
 - Debe permitir ingresar los datos requeridos.
 - Debe permitir asignar un rol.
 - Debe validar los datos obligatorios.
@@ -261,11 +302,14 @@ Como administrador, quiero registrar usuarios, para permitirles acceder al siste
 
 Como usuario, quiero iniciar sesión, para acceder a las funciones correspondientes a mi cuenta.
 
-**Prioridad:** Alta  
-**Estimación:** 5 puntos  
+**Prioridad:** Alta
+
+**Estimación:** 5 puntos
+
 **Estado:** Pendiente
 
 **Criterios de aceptación:**
+
 - Debe solicitar las credenciales.
 - Debe validar los datos ingresados.
 - Si son correctos, debe permitir el acceso.
@@ -280,11 +324,14 @@ Como usuario, quiero iniciar sesión, para acceder a las funciones correspondien
 
 Como administrador, quiero gestionar los roles de los usuarios, para controlar las funciones disponibles para cada uno.
 
-**Prioridad:** Media  
-**Estimación:** 5 puntos  
+**Prioridad:** Media
+
+**Estimación:** 5 puntos
+
 **Estado:** Pendiente
 
 **Criterios de aceptación:**
+
 - El administrador debe poder consultar los usuarios.
 - Debe poder asignar o modificar un rol.
 - El sistema debe guardar el cambio.
@@ -299,10 +346,10 @@ Como administrador, quiero gestionar los roles de los usuarios, para controlar l
 | US01 | E1 | F01 | Registrar productos | Alta | 5 | Pendiente |
 | US02 | E1 | F02 | Editar información de productos | Alta | 5 | Pendiente |
 | US03 | E1 | F03 | Organizar productos por categorías | Media | 3 | Pendiente |
-| US04 | E2 | F04 | Consultar catálogo de productos | Alta | 5 | Pendiente |
-| US05 | E2 | F05 | Buscar productos | Alta | 5 | Pendiente |
-| US06 | E2 | F06 | Filtrar productos por categoría | Media | 3 | Pendiente |
-| US07 | E2 | F07 | Consultar información detallada | Media | 3 | Pendiente |
+| US04 | E2 | F04 | Consultar catálogo de productos | Alta | 5 | Completada |
+| US05 | E2 | F05 | Buscar productos | Alta | 5 | Completada |
+| US06 | E2 | F06 | Filtrar productos por categoría | Media | 3 | Completada |
+| US07 | E2 | F07 | Consultar información detallada | Media | 3 | Completada |
 | US08 | E3 | F08 | Registrar solicitudes | Alta | 5 | Pendiente |
 | US09 | E3 | F09 | Consultar solicitudes | Media | 5 | Pendiente |
 | US10 | E3 | F10 | Gestionar estado de solicitud | Media | 3 | Pendiente |
