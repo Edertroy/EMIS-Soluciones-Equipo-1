@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EMIS Soluciones S.A.S.</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container header-content">
+
+            <div class="logo">
+                <h1>EMIS</h1>
+                <span>Soluciones S.A.S.</span>
+            </div>
+
+            <nav class="nav">
+                <a href="#inicio">Inicio</a>
+                <a href="#catalogo">Catálogo</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- INICIO -->
+        <section id="inicio" class="hero">
+            <div class="container">
+
+                <h2>Sistema de Gestión Comercial</h2>
+
+                <p>
+                    Consulta de productos y soluciones comerciales
+                    de EMIS Soluciones S.A.S.
+                </p>
+
+                <a href="#catalogo" class="btn">
+                    Ver catálogo
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- CATÁLOGO -->
+        <section id="catalogo" class="catalogo">
+
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Catálogo de productos</h2>
+
+                    <p>
+                        Consulta nuestro portafolio de productos.
+                    </p>
+                </div>
+
+
+                <!-- BÚSQUEDA Y FILTRO -->
+                <div class="catalogo-controls">
+
+                    <input
+                        type="text"
+                        id="buscador"
+                        placeholder="Buscar producto..."
+                    >
+
+                    <select id="filtroCategoria">
+
+                        <option value="todos">
+                            Todas las categorías
+                        </option>
+
+                        <option value="construccion">
+                            Construcción
+                        </option>
+
+                        <option value="ferreteria">
+                            Ferretería
+                        </option>
+
+                        <option value="industrial">
+                            Productos industriales
+                        </option>
+
+                        <option value="limpieza">
+                            Limpieza
+                        </option>
+
+                        <option value="cafeteria">
+                            Cafetería
+                        </option>
+
+                        <option value="papeleria">
+                            Papelería y oficina
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- PRODUCTOS -->
+                <div id="productos" class="productos">
+
+                    <!--
+                        Los productos serán cargados
+                        dinámicamente mediante JavaScript.
+                    -->
+
+                </div>
+
+
+                <!-- MENSAJE SIN RESULTADOS -->
+                <div
+                    id="sinResultados"
+                    class="sin-resultados"
+                    style="display: none;"
+                >
+                    <p>
+                        No se encontraron productos con los criterios
+                        seleccionados.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DETALLE DEL PRODUCTO -->
+        <section
+            id="detalleProducto"
+            class="detalle-producto"
+            style="display: none;"
+        >
+
+            <div class="container">
+
+                <button
+                    id="cerrarDetalle"
+                    class="btn-cerrar"
+                >
+                    ×
+                </button>
+
+                <div id="contenidoDetalle">
+                    <!-- El detalle será generado mediante JavaScript -->
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="contacto">
+
+            <div class="container">
+
+                <h2>Contacto</h2>
+
+                <p>
+                    ¿Necesitas información sobre nuestros productos?
+                </p>
+
+                <p>
+                    Comunícate con EMIS Soluciones S.A.S.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <p>
+                &copy; 2026 EMIS Soluciones S.A.S.
+            </p>
+
+            <p>
+                Comprometidos con tu satisfacción.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
