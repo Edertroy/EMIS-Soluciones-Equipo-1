@@ -1,5 +1,7 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +13,7 @@
 
 <body>
 
+    <!-- ENCABEZADO -->
     <header class="header">
         <div class="container header-content">
 
@@ -22,12 +25,12 @@
             <nav class="nav">
                 <a href="#inicio">Inicio</a>
                 <a href="#catalogo">Catálogo</a>
+                <a href="#registroProductos">Registrar producto</a>
                 <a href="#contacto">Contacto</a>
             </nav>
 
         </div>
     </header>
-
 
     <main>
 
@@ -49,10 +52,8 @@
             </div>
         </section>
 
-
         <!-- CATÁLOGO -->
         <section id="catalogo" class="catalogo">
-
             <div class="container">
 
                 <div class="section-title">
@@ -63,7 +64,6 @@
                     </p>
                 </div>
 
-
                 <!-- BÚSQUEDA Y FILTRO -->
                 <div class="catalogo-controls">
 
@@ -71,10 +71,13 @@
                         type="text"
                         id="buscador"
                         placeholder="Buscar producto..."
+                        aria-label="Buscar productos"
                     >
 
-                    <select id="filtroCategoria">
-
+                    <select
+                        id="filtroCategoria"
+                        aria-label="Filtrar por categoría"
+                    >
                         <option value="todos">
                             Todas las categorías
                         </option>
@@ -102,28 +105,21 @@
                         <option value="papeleria">
                             Papelería y oficina
                         </option>
-
                     </select>
 
                 </div>
 
-
                 <!-- PRODUCTOS -->
                 <div id="productos" class="productos">
-
-                    <!--
-                        Los productos serán cargados
-                        dinámicamente mediante JavaScript.
-                    -->
-
+                    <!-- Los productos se cargan con JavaScript. -->
                 </div>
-
 
                 <!-- MENSAJE SIN RESULTADOS -->
                 <div
                     id="sinResultados"
                     class="sin-resultados"
                     style="display: none;"
+                    role="status"
                 >
                     <p>
                         No se encontraron productos con los criterios
@@ -132,9 +128,117 @@
                 </div>
 
             </div>
-
         </section>
 
+        <!-- REGISTRO DE PRODUCTOS: SPRINT 2 -->
+        <section id="registroProductos" class="registro-productos">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Registrar producto</h2>
+
+                    <p>
+                        Agrega nuevos productos al catálogo comercial de EMIS.
+                    </p>
+                </div>
+
+                <form id="formularioProducto" class="formulario-producto">
+
+                    <!-- NOMBRE -->
+                    <div class="campo-formulario">
+                        <label for="nombreProducto">
+                            Nombre del producto
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nombreProducto"
+                            name="nombreProducto"
+                            placeholder="Ej. Tornillos industriales"
+                            maxlength="100"
+                            required
+                        >
+                    </div>
+
+                    <!-- CATEGORÍA -->
+                    <div class="campo-formulario">
+                        <label for="categoriaProducto">
+                            Categoría
+                        </label>
+
+                        <select
+                            id="categoriaProducto"
+                            name="categoriaProducto"
+                            required
+                        >
+                            <option value="">
+                                Selecciona una categoría
+                            </option>
+
+                            <option value="construccion">
+                                Construcción
+                            </option>
+
+                            <option value="ferreteria">
+                                Ferretería
+                            </option>
+
+                            <option value="industrial">
+                                Productos industriales
+                            </option>
+
+                            <option value="limpieza">
+                                Limpieza
+                            </option>
+
+                            <option value="cafeteria">
+                                Cafetería
+                            </option>
+
+                            <option value="papeleria">
+                                Papelería y oficina
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- DESCRIPCIÓN -->
+                    <div class="campo-formulario">
+                        <label for="descripcionProducto">
+                            Descripción
+                        </label>
+
+                        <textarea
+                            id="descripcionProducto"
+                            name="descripcionProducto"
+                            rows="4"
+                            maxlength="500"
+                            placeholder="Describe las características del producto"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <!-- BOTÓN DE REGISTRO -->
+                    <button type="submit" class="btn">
+                        Registrar producto
+                    </button>
+
+                    <!-- MENSAJE DE CONFIRMACIÓN -->
+                    <p
+                        id="mensajeRegistro"
+                        class="mensaje-registro"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+
+                </form>
+
+                <p class="nota-registro">
+                    Nota: los productos registrados son temporales.
+                    Al recargar la página, se restablecerá el catálogo inicial.
+                </p>
+
+            </div>
+        </section>
 
         <!-- DETALLE DEL PRODUCTO -->
         <section
@@ -142,28 +246,26 @@
             class="detalle-producto"
             style="display: none;"
         >
-
             <div class="container">
 
                 <button
+                    type="button"
                     id="cerrarDetalle"
                     class="btn-cerrar"
+                    aria-label="Cerrar detalle del producto"
                 >
                     ×
                 </button>
 
                 <div id="contenidoDetalle">
-                    <!-- El detalle será generado mediante JavaScript -->
+                    <!-- El detalle se genera mediante JavaScript. -->
                 </div>
 
             </div>
-
         </section>
-
 
         <!-- CONTACTO -->
         <section id="contacto" class="contacto">
-
             <div class="container">
 
                 <h2>Contacto</h2>
@@ -177,14 +279,12 @@
                 </p>
 
             </div>
-
         </section>
 
     </main>
 
-
+    <!-- PIE DE PÁGINA -->
     <footer class="footer">
-
         <div class="container">
 
             <p>
@@ -196,11 +296,12 @@
             </p>
 
         </div>
-
     </footer>
 
-
+    <!-- JAVASCRIPT -->
     <script src="js/app.js"></script>
 
 </body>
+
 </html>
+```

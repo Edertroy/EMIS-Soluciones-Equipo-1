@@ -1,6 +1,8 @@
-// ==========================================
-// CATÁLOGO DE PRODUCTOS - EMIS SOLUCIONES
-// ==========================================
+
+ // ==========================================
+ // CATÁLOGO DE PRODUCTOS - EMIS SOLUCIONES
+ // SPRINT 1 Y SPRINT 2
+ // ==========================================
 
 const productos = [
     {
@@ -11,7 +13,6 @@ const productos = [
         descripcion: "Tubería para diferentes aplicaciones y necesidades.",
         detalle: "Producto disponible dentro del portafolio comercial de EMIS Soluciones S.A.S."
     },
-
     {
         id: 2,
         nombre: "Tubería PVC",
@@ -20,7 +21,6 @@ const productos = [
         descripcion: "Solución para instalaciones y proyectos de construcción.",
         detalle: "Producto orientado a proyectos relacionados con construcción e instalaciones."
     },
-
     {
         id: 3,
         nombre: "Abrazaderas",
@@ -29,7 +29,6 @@ const productos = [
         descripcion: "Elementos utilizados para diferentes aplicaciones industriales.",
         detalle: "EMIS comercializa abrazaderas dentro de su línea de productos industriales."
     },
-
     {
         id: 4,
         nombre: "Acoples Hidráulicos",
@@ -38,7 +37,6 @@ const productos = [
         descripcion: "Componentes para conexiones hidráulicas.",
         detalle: "Producto perteneciente a la línea de productos industriales de EMIS."
     },
-
     {
         id: 5,
         nombre: "Elementos de Limpieza",
@@ -47,7 +45,6 @@ const productos = [
         descripcion: "Productos para limpieza y mantenimiento.",
         detalle: "La empresa cuenta con una amplia variedad de productos relacionados con limpieza."
     },
-
     {
         id: 6,
         nombre: "Guantes",
@@ -56,7 +53,6 @@ const productos = [
         descripcion: "Elementos destinados a labores de limpieza y protección.",
         detalle: "Producto incluido dentro de la oferta de elementos de limpieza."
     },
-
     {
         id: 7,
         nombre: "Productos para Cafetería",
@@ -65,7 +61,6 @@ const productos = [
         descripcion: "Suministros para cafetería y consumo empresarial.",
         detalle: "EMIS ofrece productos y suministros relacionados con cafetería."
     },
-
     {
         id: 8,
         nombre: "Suministros de Oficina",
@@ -74,7 +69,6 @@ const productos = [
         descripcion: "Artículos para papelería y actividades de oficina.",
         detalle: "Productos destinados a cubrir necesidades de papelería y suministros de oficina."
     },
-
     {
         id: 9,
         nombre: "Bolsas",
@@ -83,7 +77,6 @@ const productos = [
         descripcion: "Bolsas para diferentes necesidades de limpieza y manejo de residuos.",
         detalle: "Las bolsas forman parte de los suministros generales comercializados por EMIS."
     },
-
     {
         id: 10,
         nombre: "Detergentes",
@@ -100,18 +93,37 @@ const productos = [
 // ==========================================
 
 const contenedorProductos = document.getElementById("productos");
-
 const buscador = document.getElementById("buscador");
-
 const filtroCategoria = document.getElementById("filtroCategoria");
-
 const sinResultados = document.getElementById("sinResultados");
 
 const detalleProducto = document.getElementById("detalleProducto");
-
 const contenidoDetalle = document.getElementById("contenidoDetalle");
-
 const cerrarDetalle = document.getElementById("cerrarDetalle");
+
+const formularioProducto = document.getElementById("formularioProducto");
+const nombreProducto = document.getElementById("nombreProducto");
+const categoriaProducto = document.getElementById("categoriaProducto");
+const descripcionProducto = document.getElementById("descripcionProducto");
+const mensajeRegistro = document.getElementById("mensajeRegistro");
+
+
+// ==========================================
+// CONVERTIR LA CATEGORÍA EN TEXTO
+// ==========================================
+
+function obtenerNombreCategoria(categoria) {
+    const categorias = {
+        construccion: "Construcción",
+        ferreteria: "Ferretería",
+        industrial: "Productos industriales",
+        limpieza: "Limpieza",
+        cafeteria: "Cafetería",
+        papeleria: "Papelería y oficina"
+    };
+
+    return categorias[categoria] || "Sin categoría";
+}
 
 
 // ==========================================
@@ -119,158 +131,142 @@ const cerrarDetalle = document.getElementById("cerrarDetalle");
 // ==========================================
 
 function mostrarProductos(listaProductos) {
-
     contenedorProductos.innerHTML = "";
 
     if (listaProductos.length === 0) {
-
         sinResultados.style.display = "block";
-
         return;
     }
 
     sinResultados.style.display = "none";
 
-
     listaProductos.forEach(producto => {
-
         const tarjeta = document.createElement("article");
-
         tarjeta.classList.add("producto-card");
 
-        tarjeta.innerHTML = `
+        const imagen = document.createElement("div");
+        imagen.classList.add("producto-imagen");
 
-            <div class="producto-imagen">
-                <span>${producto.nombre}</span>
-            </div>
+        const nombreImagen = document.createElement("span");
+        nombreImagen.textContent = producto.nombre;
+        imagen.appendChild(nombreImagen);
 
-            <div class="producto-contenido">
+        const contenido = document.createElement("div");
+        contenido.classList.add("producto-contenido");
 
-                <span class="producto-categoria">
-                    ${producto.categoriaNombre}
-                </span>
+        const categoria = document.createElement("span");
+        categoria.classList.add("producto-categoria");
+        categoria.textContent = producto.categoriaNombre;
 
-                <h3>
-                    ${producto.nombre}
-                </h3>
+        const titulo = document.createElement("h3");
+        titulo.textContent = producto.nombre;
 
-                <p class="producto-descripcion">
-                    ${producto.descripcion}
-                </p>
+        const descripcion = document.createElement("p");
+        descripcion.classList.add("producto-descripcion");
+        descripcion.textContent = producto.descripcion;
 
-                <button
-                    class="btn btn-detalle"
-                    onclick="mostrarDetalle(${producto.id})"
-                >
-                    Ver detalle
-                </button>
+        const botonDetalle = document.createElement("button");
+        botonDetalle.classList.add("btn", "btn-detalle");
+        botonDetalle.type = "button";
+        botonDetalle.textContent = "Ver detalle";
 
-            </div>
-        `;
+        botonDetalle.addEventListener("click", () => {
+            mostrarDetalle(producto.id);
+        });
 
+        contenido.append(
+            categoria,
+            titulo,
+            descripcion,
+            botonDetalle
+        );
+
+        tarjeta.append(imagen, contenido);
         contenedorProductos.appendChild(tarjeta);
     });
 }
 
 
 // ==========================================
-// BUSCAR Y FILTRAR
+// BUSCAR Y FILTRAR PRODUCTOS
 // ==========================================
 
 function actualizarCatalogo() {
-
-    const textoBusqueda = buscador.value
-        .toLowerCase()
-        .trim();
-
+    const textoBusqueda = buscador.value.toLowerCase().trim();
     const categoriaSeleccionada = filtroCategoria.value;
 
-
     const productosFiltrados = productos.filter(producto => {
-
         const coincideBusqueda =
-            producto.nombre
-                .toLowerCase()
-                .includes(textoBusqueda) ||
-
-            producto.descripcion
-                .toLowerCase()
-                .includes(textoBusqueda);
-
+            producto.nombre.toLowerCase().includes(textoBusqueda) ||
+            producto.descripcion.toLowerCase().includes(textoBusqueda);
 
         const coincideCategoria =
             categoriaSeleccionada === "todos" ||
-
             producto.categoria === categoriaSeleccionada;
-
 
         return coincideBusqueda && coincideCategoria;
     });
-
 
     mostrarProductos(productosFiltrados);
 }
 
 
 // ==========================================
-// MOSTRAR DETALLE
+// MOSTRAR DETALLE DEL PRODUCTO
 // ==========================================
 
 function mostrarDetalle(id) {
-
-    const producto = productos.find(
-        producto => producto.id === id
-    );
-
+    const producto = productos.find(producto => producto.id === id);
 
     if (!producto) {
         return;
     }
 
+    contenidoDetalle.innerHTML = "";
 
-    contenidoDetalle.innerHTML = `
+    const contenedor = document.createElement("div");
+    contenedor.classList.add("detalle-contenido");
 
-        <div class="detalle-contenido">
+    const imagen = document.createElement("div");
+    imagen.classList.add("detalle-imagen");
 
-            <div class="detalle-imagen">
+    const nombreImagen = document.createElement("span");
+    nombreImagen.textContent = producto.nombre;
+    imagen.appendChild(nombreImagen);
 
-                <span>
-                    ${producto.nombre}
-                </span>
+    const informacion = document.createElement("div");
+    informacion.classList.add("detalle-informacion");
 
-            </div>
+    const categoria = document.createElement("span");
+    categoria.classList.add("producto-categoria");
+    categoria.textContent = producto.categoriaNombre;
 
+    const titulo = document.createElement("h2");
+    titulo.textContent = producto.nombre;
 
-            <div class="detalle-informacion">
+    const etiquetaDescripcion = document.createElement("p");
+    const negrita = document.createElement("strong");
+    negrita.textContent = "Descripción:";
+    etiquetaDescripcion.appendChild(negrita);
 
-                <span class="producto-categoria">
-                    ${producto.categoriaNombre}
-                </span>
+    const descripcion = document.createElement("p");
+    descripcion.textContent = producto.descripcion;
 
-                <h2>
-                    ${producto.nombre}
-                </h2>
+    const detalle = document.createElement("p");
+    detalle.textContent = producto.detalle;
 
-                <p>
-                    <strong>Descripción:</strong>
-                </p>
+    informacion.append(
+        categoria,
+        titulo,
+        etiquetaDescripcion,
+        descripcion,
+        detalle
+    );
 
-                <p>
-                    ${producto.descripcion}
-                </p>
-
-                <p>
-                    ${producto.detalle}
-                </p>
-
-            </div>
-
-        </div>
-    `;
-
+    contenedor.append(imagen, informacion);
+    contenidoDetalle.appendChild(contenedor);
 
     detalleProducto.style.display = "block";
-
 
     detalleProducto.scrollIntoView({
         behavior: "smooth"
@@ -283,9 +279,61 @@ function mostrarDetalle(id) {
 // ==========================================
 
 cerrarDetalle.addEventListener("click", () => {
-
     detalleProducto.style.display = "none";
+});
 
+
+// ==========================================
+// REGISTRAR PRODUCTOS - SPRINT 2
+// ==========================================
+
+formularioProducto.addEventListener("submit", evento => {
+    evento.preventDefault();
+
+    const nombre = nombreProducto.value.trim();
+    const categoria = categoriaProducto.value;
+    const descripcion = descripcionProducto.value.trim();
+
+    // Validar que los campos contengan información.
+    if (!nombre || !categoria || !descripcion) {
+        mensajeRegistro.textContent =
+            "Por favor, completa todos los campos.";
+        return;
+    }
+
+    // Crear el nuevo producto en memoria.
+    const nuevoProducto = {
+        id: productos.length > 0
+            ? Math.max(...productos.map(producto => producto.id)) + 1
+            : 1,
+
+        nombre: nombre,
+        categoria: categoria,
+        categoriaNombre: obtenerNombreCategoria(categoria),
+        descripcion: descripcion,
+        detalle: descripcion
+    };
+
+    // Agregar el producto al catálogo.
+    productos.push(nuevoProducto);
+
+    // Actualizar el catálogo respetando la búsqueda y el filtro actuales.
+    actualizarCatalogo();
+
+    // Confirmar el registro y limpiar el formulario.
+    mensajeRegistro.textContent =
+        `El producto "${nombre}" se registró correctamente.`;
+
+    formularioProducto.reset();
+});
+
+
+// ==========================================
+// LIMPIAR MENSAJE AL VOLVER A EDITAR
+// ==========================================
+
+formularioProducto.addEventListener("input", () => {
+    mensajeRegistro.textContent = "";
 });
 
 
@@ -293,16 +341,8 @@ cerrarDetalle.addEventListener("click", () => {
 // EVENTOS DE BÚSQUEDA Y FILTRO
 // ==========================================
 
-buscador.addEventListener(
-    "input",
-    actualizarCatalogo
-);
-
-
-filtroCategoria.addEventListener(
-    "change",
-    actualizarCatalogo
-);
+buscador.addEventListener("input", actualizarCatalogo);
+filtroCategoria.addEventListener("change", actualizarCatalogo);
 
 
 // ==========================================
