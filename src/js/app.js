@@ -1,8 +1,7 @@
-
- // ==========================================
- // CATÁLOGO DE PRODUCTOS - EMIS SOLUCIONES
- // SPRINT 1 Y SPRINT 2
- // ==========================================
+// ==========================================
+// CATÁLOGO DE PRODUCTOS - EMIS SOLUCIONES
+// SPRINT 1, SPRINT 2 Y SPRINT 3
+// ==========================================
 
 const productos = [
     {
@@ -87,26 +86,39 @@ const productos = [
     }
 ];
 
-
 // ==========================================
 // ELEMENTOS DEL HTML
 // ==========================================
 
+// Catálogo, búsqueda y filtros
 const contenedorProductos = document.getElementById("productos");
 const buscador = document.getElementById("buscador");
 const filtroCategoria = document.getElementById("filtroCategoria");
 const sinResultados = document.getElementById("sinResultados");
 
+// Detalles del producto
 const detalleProducto = document.getElementById("detalleProducto");
 const contenidoDetalle = document.getElementById("contenidoDetalle");
 const cerrarDetalle = document.getElementById("cerrarDetalle");
 
+// Formulario de registro - Sprint 2
 const formularioProducto = document.getElementById("formularioProducto");
 const nombreProducto = document.getElementById("nombreProducto");
 const categoriaProducto = document.getElementById("categoriaProducto");
 const descripcionProducto = document.getElementById("descripcionProducto");
 const mensajeRegistro = document.getElementById("mensajeRegistro");
 
+// Formulario de edición - Sprint 3
+const edicionProductos = document.getElementById("edicionProductos");
+const formularioEdicion = document.getElementById("formularioEdicion");
+const nombreEdicion = document.getElementById("nombreEdicion");
+const categoriaEdicion = document.getElementById("categoriaEdicion");
+const descripcionEdicion = document.getElementById("descripcionEdicion");
+const cancelarEdicion = document.getElementById("cancelarEdicion");
+const mensajeEdicion = document.getElementById("mensajeEdicion");
+
+// Guarda el ID del producto que se está editando
+let idProductoEnEdicion = null;
 
 // ==========================================
 // CONVERTIR LA CATEGORÍA EN TEXTO
@@ -124,7 +136,6 @@ function obtenerNombreCategoria(categoria) {
 
     return categorias[categoria] || "Sin categoría";
 }
-
 
 // ==========================================
 // MOSTRAR PRODUCTOS
@@ -165,6 +176,7 @@ function mostrarProductos(listaProductos) {
         descripcion.classList.add("producto-descripcion");
         descripcion.textContent = producto.descripcion;
 
+        // Botón para consultar los detalles
         const botonDetalle = document.createElement("button");
         botonDetalle.classList.add("btn", "btn-detalle");
         botonDetalle.type = "button";
@@ -174,18 +186,28 @@ function mostrarProductos(listaProductos) {
             mostrarDetalle(producto.id);
         });
 
+        // Botón para editar el producto - Sprint 3
+        const botonEditar = document.createElement("button");
+        botonEditar.classList.add("btn", "btn-editar");
+        botonEditar.type = "button";
+        botonEditar.textContent = "Editar producto";
+
+        botonEditar.addEventListener("click", () => {
+            editarProducto(producto.id);
+        });
+
         contenido.append(
             categoria,
             titulo,
             descripcion,
-            botonDetalle
+            botonDetalle,
+            botonEditar
         );
 
         tarjeta.append(imagen, contenido);
         contenedorProductos.appendChild(tarjeta);
     });
 }
-
 
 // ==========================================
 // BUSCAR Y FILTRAR PRODUCTOS
@@ -209,7 +231,6 @@ function actualizarCatalogo() {
 
     mostrarProductos(productosFiltrados);
 }
-
 
 // ==========================================
 // MOSTRAR DETALLE DEL PRODUCTO
@@ -273,7 +294,6 @@ function mostrarDetalle(id) {
     });
 }
 
-
 // ==========================================
 // CERRAR DETALLE
 // ==========================================
@@ -281,7 +301,6 @@ function mostrarDetalle(id) {
 cerrarDetalle.addEventListener("click", () => {
     detalleProducto.style.display = "none";
 });
-
 
 // ==========================================
 // REGISTRAR PRODUCTOS - SPRINT 2
@@ -294,19 +313,16 @@ formularioProducto.addEventListener("submit", evento => {
     const categoria = categoriaProducto.value;
     const descripcion = descripcionProducto.value.trim();
 
-    // Validar que los campos contengan información.
     if (!nombre || !categoria || !descripcion) {
         mensajeRegistro.textContent =
             "Por favor, completa todos los campos.";
         return;
     }
 
-    // Crear el nuevo producto en memoria.
     const nuevoProducto = {
         id: productos.length > 0
             ? Math.max(...productos.map(producto => producto.id)) + 1
             : 1,
-
         nombre: nombre,
         categoria: categoria,
         categoriaNombre: obtenerNombreCategoria(categoria),
@@ -314,28 +330,127 @@ formularioProducto.addEventListener("submit", evento => {
         detalle: descripcion
     };
 
-    // Agregar el producto al catálogo.
     productos.push(nuevoProducto);
 
-    // Actualizar el catálogo respetando la búsqueda y el filtro actuales.
     actualizarCatalogo();
 
-    // Confirmar el registro y limpiar el formulario.
     mensajeRegistro.textContent =
         `El producto "${nombre}" se registró correctamente.`;
 
     formularioProducto.reset();
 });
 
-
-// ==========================================
-// LIMPIAR MENSAJE AL VOLVER A EDITAR
-// ==========================================
-
+// Limpiar el mensaje al modificar el formulario de registro
 formularioProducto.addEventListener("input", () => {
     mensajeRegistro.textContent = "";
 });
 
+// ==========================================
+// EDITAR PRODUCTOS - SPRINT 3
+// ==========================================
+
+function editarProducto(id) {
+    const producto = productos.find(producto => producto.id === id);
+
+    if (!producto) {
+        return;
+    }
+
+    // Guardar el identificador del producto seleccionado
+    idProductoEnEdicion = producto.id;
+
+    // Cargar la información actual en el formulario
+    nombreEdicion.value = producto.nombre;
+    categoriaEdicion.value = producto.categoria;
+    descripcionEdicion.value = producto.descripcion;
+
+    // Limpiar mensajes anteriores
+    mensajeEdicion.textContent = "";
+
+    // Ocultar el detalle para evitar mostrar información desactualizada
+    detalleProducto.style.display = "none";
+
+    // Mostrar el formulario de edición
+    edicionProductos.style.display = "block";
+
+    edicionProductos.scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+// Guardar los cambios del producto
+formularioEdicion.addEventListener("submit", evento => {
+    evento.preventDefault();
+
+    if (idProductoEnEdicion === null) {
+        mensajeEdicion.textContent =
+            "Selecciona un producto antes de guardar los cambios.";
+        return;
+    }
+
+    const nombre = nombreEdicion.value.trim();
+    const categoria = categoriaEdicion.value;
+    const descripcion = descripcionEdicion.value.trim();
+
+    // Validar los campos
+    if (!nombre || !categoria || !descripcion) {
+        mensajeEdicion.textContent =
+            "Por favor, completa todos los campos.";
+        return;
+    }
+
+    // Buscar el producto que se va a actualizar
+    const producto = productos.find(
+        producto => producto.id === idProductoEnEdicion
+    );
+
+    if (!producto) {
+        mensajeEdicion.textContent =
+            "No se encontró el producto que deseas editar.";
+        return;
+    }
+
+    // Guardar la descripción anterior para mantener sincronizado
+    // el detalle cuando este tenía la misma descripción
+    const descripcionAnterior = producto.descripcion;
+
+    // Actualizar los datos del producto seleccionado
+    producto.nombre = nombre;
+    producto.categoria = categoria;
+    producto.categoriaNombre = obtenerNombreCategoria(categoria);
+    producto.descripcion = descripcion;
+
+    if (producto.detalle === descripcionAnterior) {
+        producto.detalle = descripcion;
+    }
+
+    // Actualizar las tarjetas respetando búsqueda y filtro
+    actualizarCatalogo();
+
+    // Mostrar confirmación
+    mensajeEdicion.textContent =
+        `El producto "${nombre}" se actualizó correctamente.`;
+
+    // Dejar de editar y limpiar los campos
+    idProductoEnEdicion = null;
+    formularioEdicion.reset();
+});
+
+// Cancelar la edición sin guardar
+cancelarEdicion.addEventListener("click", () => {
+    idProductoEnEdicion = null;
+
+    formularioEdicion.reset();
+
+    mensajeEdicion.textContent = "";
+
+    edicionProductos.style.display = "none";
+});
+
+// Limpiar el mensaje cuando se cambian los datos del formulario
+formularioEdicion.addEventListener("input", () => {
+    mensajeEdicion.textContent = "";
+});
 
 // ==========================================
 // EVENTOS DE BÚSQUEDA Y FILTRO
@@ -343,7 +458,6 @@ formularioProducto.addEventListener("input", () => {
 
 buscador.addEventListener("input", actualizarCatalogo);
 filtroCategoria.addEventListener("change", actualizarCatalogo);
-
 
 // ==========================================
 // CARGAR CATÁLOGO INICIAL

@@ -240,6 +240,135 @@
             </div>
         </section>
 
+        <!-- ========================================== -->
+<!-- EDICIÓN DE PRODUCTOS - SPRINT 3 -->
+<!-- ========================================== -->
+
+<section
+    id="edicionProductos"
+    class="registro-productos"
+    style="display: none;"
+>
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Editar producto</h2>
+            <p>
+                Modifica la información del producto seleccionado.
+            </p>
+        </div>
+
+        <form
+            id="formularioEdicion"
+            class="formulario-producto"
+        >
+
+            <!-- Nombre del producto -->
+            <div class="campo-formulario">
+                <label for="nombreEdicion">
+                    Nombre del producto
+                </label>
+
+                <input
+                    type="text"
+                    id="nombreEdicion"
+                    name="nombreEdicion"
+                    maxlength="100"
+                    placeholder="Ingresa el nombre del producto"
+                    required
+                >
+            </div>
+
+            <!-- Categoría del producto -->
+            <div class="campo-formulario">
+                <label for="categoriaEdicion">
+                    Categoría
+                </label>
+
+                <select
+                    id="categoriaEdicion"
+                    name="categoriaEdicion"
+                    required
+                >
+                    <option value="">
+                        Selecciona una categoría
+                    </option>
+
+                    <option value="construccion">
+                        Construcción
+                    </option>
+
+                    <option value="ferreteria">
+                        Ferretería
+                    </option>
+
+                    <option value="industrial">
+                        Productos industriales
+                    </option>
+
+                    <option value="limpieza">
+                        Limpieza
+                    </option>
+
+                    <option value="cafeteria">
+                        Cafetería
+                    </option>
+
+                    <option value="papeleria">
+                        Papelería y oficina
+                    </option>
+                </select>
+            </div>
+
+            <!-- Descripción del producto -->
+            <div class="campo-formulario">
+                <label for="descripcionEdicion">
+                    Descripción
+                </label>
+
+                <textarea
+                    id="descripcionEdicion"
+                    name="descripcionEdicion"
+                    rows="4"
+                    maxlength="500"
+                    placeholder="Describe las características del producto"
+                    required
+                ></textarea>
+            </div>
+
+            <!-- Botones del formulario -->
+            <div class="acciones-formulario">
+
+                <button
+                    type="submit"
+                    class="btn"
+                >
+                    Guardar cambios
+                </button>
+
+                <button
+                    type="button"
+                    id="cancelarEdicion"
+                    class="btn btn-editar"
+                >
+                    Cancelar
+                </button>
+
+            </div>
+
+            <!-- Mensaje de confirmación o error -->
+            <p
+                id="mensajeEdicion"
+                class="mensaje-registro"
+                role="status"
+                aria-live="polite"
+            ></p>
+
+        </form>
+
+    </div>
+</section>
+
         <!-- DETALLE DEL PRODUCTO -->
         <section
             id="detalleProducto"

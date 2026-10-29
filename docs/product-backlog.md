@@ -22,7 +22,7 @@ Como administrador, quiero registrar productos con su información básica, para
 
 **Estimación:** 5 puntos
 
-**Estado:** Pendiente
+**Estado:** Completada
 
 **Criterios de aceptación:**
 

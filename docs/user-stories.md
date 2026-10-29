@@ -37,17 +37,39 @@
 
 **Feature:** F02 — Editar información de productos
 
+**Prioridad:** Alta
+
+**Estimación:** 5 puntos
+
+**Sprint asignado:** Sprint 3
+
+**Estado:** En progreso
+
 **Historia de usuario:**
 
-> Como administrador, quiero editar la información de un producto, para mantener sus datos actualizados.
+> Como administrador, quiero editar la información de los productos, para mantener actualizado el catálogo comercial.
 
 **Criterios de aceptación:**
 
-- El administrador debe poder seleccionar un producto.
-- El sistema debe mostrar su información actual.
-- Debe permitir modificar los datos.
-- Debe permitir guardar los cambios.
-- El sistema debe confirmar la actualización.
+- El administrador debe poder seleccionar un producto existente para editarlo.
+- El sistema debe mostrar la información actual del producto seleccionado.
+- Debe permitir modificar el nombre del producto.
+- Debe permitir modificar la categoría del producto.
+- Debe permitir modificar la descripción del producto.
+- El sistema debe validar los campos obligatorios antes de guardar los cambios.
+- El sistema debe mostrar un mensaje de confirmación cuando la actualización sea exitosa.
+- Los cambios deben reflejarse en el catálogo y en el detalle del producto.
+- Las funciones de búsqueda y filtrado deben continuar funcionando después de la edición.
+- El administrador debe poder cancelar la edición sin guardar los cambios.
+- Los cambios se conservarán temporalmente mientras la página permanezca abierta.
+
+**Consideraciones técnicas:**
+
+La funcionalidad se desarrolla con HTML, CSS y JavaScript. Los datos se administran temporalmente en memoria, sin conexión a una base de datos ni almacenamiento persistente.
+
+**Definición de terminado:**
+
+La historia se considerará completada cuando se hayan implementado y probado sus criterios de aceptación y los resultados estén documentados.
 
 ---
 
@@ -279,3 +301,5 @@
 - Debe poder asignar o modificar un rol.
 - El sistema debe guardar el cambio.
 - Las funciones disponibles deben corresponder al rol asignado.
+
+---
