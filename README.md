@@ -42,6 +42,7 @@ Las funcionalidades se desarrollarán progresivamente, de acuerdo con las priori
 * Eder Avendaño
 * Nicol Duque
 * Cristian Zapata
+* Miguel Angel Cañas
 
 ## Tecnologías
 
