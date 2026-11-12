@@ -11,6 +11,7 @@ Sistema de Gestión Comercial para EMIS Soluciones S.A.S.
 - Eder Avendaño
 - Nicol Duque
 - Cristian Zapata
+- Miguel Angel Cañas
 
 ## Objetivo del Sprint
 

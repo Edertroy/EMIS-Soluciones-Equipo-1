@@ -10,6 +10,7 @@
 - Eder Avendaño
 - Nicol Duque
 - Cristian Zapata
+- Miguel Angel Cañas
 
 ## Objetivo del Sprint
 
@@ -29,7 +30,7 @@ El objetivo es facilitar la actualización del nombre, la categoría y la descri
 
 **Estimación:** 5 puntos
 
-**Estado:** En progreso
+**Estado:** Completada
 
 **Historia de usuario:**
 

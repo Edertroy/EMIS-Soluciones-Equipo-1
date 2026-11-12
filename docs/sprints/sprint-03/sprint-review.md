@@ -4,7 +4,7 @@
 
 - **Proyecto:** Sistema de Gestión Comercial para EMIS Soluciones S.A.S.
 - **Equipo:** Equipo 1
-- **Integrantes:** Eder Avendaño, Nicol Duque y Cristian Zapata.
+- **Integrantes:** Eder Avendaño, Nicol Duque y Cristian Zapata, Miguel Angel Cañas.
 - **Sprint:** 3
 - **Historia de usuario:** US02 - Editar información de productos.
 
@@ -44,9 +44,22 @@ Los datos se administran temporalmente en memoria, por lo que los cambios no se 
 
 ## 6. Resultado de la revisión
 
-**Estado:** Pendiente de validación final.
+**Estado:** Validación funcional satisfactoria.
 
-La implementación debe probarse en el navegador para confirmar el cumplimiento de los criterios de aceptación antes de dar por completada la historia de usuario.
+Se realizaron pruebas funcionales de la edición de productos en la aplicación web de EMIS Soluciones S.A.S. Los resultados obtenidos fueron satisfactorios.
+
+Las pruebas realizadas confirmaron que:
+
+- El botón de edición aparece en las tarjetas del catálogo.
+- El formulario carga la información actual del producto seleccionado.
+- Los cambios guardados se reflejan en el catálogo.
+- El sistema valida los campos obligatorios antes de guardar.
+- La cancelación permite salir de la edición sin guardar las modificaciones.
+- La búsqueda, los filtros y la consulta de detalles continúan funcionando después de editar un producto.
+
+La información continúa almacenándose temporalmente en memoria, por lo que los cambios no persisten después de recargar la página.
+
+**Conclusión:** Las pruebas funcionales realizadas fueron satisfactorias. La historia US02 puede considerarse completada respecto a los criterios verificados, sujeta a la revisión final de la documentación y al registro de los cambios en el repositorio.
 
 ## 7. Próximos pasos
 

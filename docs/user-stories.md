@@ -10,6 +10,7 @@
 - Eder Avendaño
 - Nicol Duque
 - Cristian Zapata
+- Miguel Angel Cañas
 
 ---
 
@@ -43,7 +44,7 @@
 
 **Sprint asignado:** Sprint 3
 
-**Estado:** En progreso
+**Estado:** Completada
 
 **Historia de usuario:**
 

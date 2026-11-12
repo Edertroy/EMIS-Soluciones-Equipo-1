@@ -6,7 +6,7 @@
 
 **Equipo:** Equipo 1
 
-**Integrantes:** Eder Avendaño, Nicol Duque, Cristian Zapata
+**Integrantes:** Eder Avendaño, Nicol Duque, Cristian Zapata, Miguel Angel Cañas,
 
 ---
 

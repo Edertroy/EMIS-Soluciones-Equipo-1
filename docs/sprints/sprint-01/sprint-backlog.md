@@ -11,6 +11,7 @@
 - Eder Avendaño
 - Nicol Duque
 - Cristian Zapata
+- Miguel Angel Cañas
 
 ---
 
